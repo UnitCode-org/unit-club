@@ -15,6 +15,9 @@ const config: Config = {
       },
     },
   },
+  colors: {
+    "unit-gray-30": "CDCDCD"
+  },
   plugins: [],
 };
 export default config;
