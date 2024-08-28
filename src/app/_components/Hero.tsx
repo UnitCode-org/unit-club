@@ -1,16 +1,29 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from "framer-motion"
 import FadeIn from "@/components/animations/FadeIn";
 
 function Hero() {
-	const [isVisible, setIsVisible] = useState(false);
+	const [firstIntro, setFirstIntro] = useState(true);
+	const [secondIntro, setSecondIntro] = useState(false);
+
+	useEffect(() => {
+		setTimeout(function () {
+			setFirstIntro(false);
+		}, 3000);
+		setTimeout(function () {
+			setSecondIntro(true);
+		}, 4000);
+		setTimeout(function () {
+			setSecondIntro(false);
+		}, 7000);
+	}, []);
 
 	return (
-		<div className="text-center flex flex-col gap-8" onClick={() => setIsVisible(!isVisible)}>
+		<div className="text-center flex flex-col gap-8">
 			<AnimatePresence>
-				{!isVisible && (
+				{firstIntro && (
 					<>
 						<FadeIn>
 							<h3 className="font-medium text-unit-gray-30 text-lg">WELCOME TO THE</h3>
@@ -20,6 +33,16 @@ function Hero() {
 						</FadeIn>
 						<FadeIn delay={1}>
 							<h2 className="font-medium text-unit-gray-30 text-lg">BY UNIT NETWORK</h2>
+						</FadeIn>
+					</>
+				)}
+				{secondIntro && (
+					<>
+						<FadeIn>
+							<h3 className="font-medium text-unit-gray-30 text-lg">WELCOME TO THE UNIT CLUB.</h3>
+						</FadeIn>
+						<FadeIn delay={0.5}>
+							<h1 className="font-medium text-unit-gray-30 text-lg">YOUR GATEWAY TO EXCLUSIVE<br /> EXPERIENCES AND ELITE CONNECTIONS</h1>
 						</FadeIn>
 					</>
 				)}
