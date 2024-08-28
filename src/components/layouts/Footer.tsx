@@ -4,7 +4,7 @@ import React from "react";
 
 function Footer() {
 	return (
-		<div className="flex flex-col lg:flex-row gap-10 lg:gap-4 items-center justify-between w-full p-8">
+		<div className="flex flex-col lg:flex-row gap-10 lg:gap-4 items-center justify-between w-full py-8 px-10">
 			<div className="grow basis-0">
 				<Image src="/images/logo/unit-club.svg" width={28} height={28} alt="logo" />
 			</div>
