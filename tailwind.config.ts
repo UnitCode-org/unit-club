@@ -56,6 +56,7 @@ const config = {
           20: "#CFCFCF",
           30: "#CDCDCD",
           40: "#ACACAC",
+          50: "#939393",
         }
       },
       borderRadius: {
