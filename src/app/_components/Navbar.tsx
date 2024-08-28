@@ -18,7 +18,7 @@ function Navbar() {
           <Image src="/images/logo/unit-club.svg" width={28} height={28} alt="logo" />
         </div>
         <Sheet open={openMobileSheet} onOpenChange={setOpenMobileSheet}>
-          <SheetTrigger>
+          <SheetTrigger asChild>
             <Button variant="secondary" className="rounded-full px-3 py-1.5 h-auto" onClick={() => setOpenMobileSheet(true)}>
               <Menu size={18} />
             </Button>
