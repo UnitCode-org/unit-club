@@ -7,7 +7,11 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
-function Navbar() {
+interface NavbarProps {
+  hideLinks?: boolean;
+}
+
+function Navbar({ hideLinks }: NavbarProps) {
   const [openMobileSheet, setOpenMobileSheet] = React.useState(false);
 
   return (
@@ -51,25 +55,29 @@ function Navbar() {
       </div>
       {/* Desktop Navbar */}
       <div className="hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10">
-        <div className="grow basis-0 flex items-center gap-10">
-          <Link href="/" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
-            HOME
-          </Link>
-          <Link href="/black" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
-            UNIT BLACK
-          </Link>
-          <Link href="/365" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
-            UNIT 365
-          </Link>
-        </div>
-        <div className="opacity-75">
+        {!hideLinks && (
+          <div className="grow basis-0 flex items-center gap-10">
+            <Link href="/" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
+              HOME
+            </Link>
+            <Link href="/black" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
+              UNIT BLACK
+            </Link>
+            <Link href="/365" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
+              UNIT 365
+            </Link>
+          </div>
+        )}
+        <div className="opacity-75 mx-auto">
           <Image src="/images/logo/unit-club.svg" width={28} height={28} alt="logo" />
         </div>
-        <div className="flex gap-10 grow basis-0 items-center justify-end">
-          <Link href="/membership" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
-            MEMBERSHIP
-          </Link>
-        </div>
+        {!hideLinks && (
+          <div className="flex gap-10 grow basis-0 items-center justify-end">
+            <Link href="/membership" className="font-medium text-unit-gray-40 hover:text-white transition-colors">
+              MEMBERSHIP
+            </Link>
+          </div>
+        )}
       </div>
     </>
   );
