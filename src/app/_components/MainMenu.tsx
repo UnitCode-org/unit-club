@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
 
 function MainMenu() {
   const [cursorText, setCursorText] = useState("");
@@ -23,7 +24,12 @@ function MainMenu() {
   const [unit365Hovered, setUnit365Hovered] = useState(false);
   
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <CustomCursor
         opacityDelay={1}
         opacityDuration={0.5}
@@ -39,8 +45,9 @@ function MainMenu() {
         </>
       </CustomCursor>
       <div className="flex w-screen h-screen justify-center items-end gap-8 -mt-[5.75rem]">
-        <div
-          className="bg-black flex flex-col items-center justify-end rounded-t-full w-1/3 h-2/3 relative overflow-hidden max-w-md group"
+        <Link
+          href={"/black"}
+          className="bg-black flex flex-col items-center justify-end rounded-t-full w-1/3 h-2/3 relative overflow-hidden max-w-md group cursor-none"
           onMouseEnter={() => {
             setCursorVariant(variants.project);
             setCursorText("ENTER");
@@ -87,10 +94,10 @@ function MainMenu() {
               <br /> EXPERIENCES AND ELITE CONNECTIONS
             </p>
           </div>
-        </div>
+        </Link>
         <Link
           href={"/365"}
-          className="bg-black flex flex-col items-center justify-end rounded-t-full w-1/3 h-2/3 relative overflow-hidden max-w-md group"
+          className="bg-black flex flex-col items-center justify-end rounded-t-full w-1/3 h-2/3 relative overflow-hidden max-w-md group cursor-none"
           onMouseEnter={() => {
             setCursorVariant(variants.project);
             setCursorText("ENTER");
@@ -140,7 +147,7 @@ function MainMenu() {
         </Link>
       </div>
       <Footer />
-    </>
+    </motion.div>
   );
 }
 
