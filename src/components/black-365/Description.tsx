@@ -10,14 +10,14 @@ const Description: React.FC<DescriptionProps> = ({
   description,
 }) => {
   return (
-    <div className="flex justify-center items-center min-h-screen max-w-screen-2xl px-6">
+    <section className="flex justify-center items-center max-w-screen-2xl min-h-screen px-6">
       <div className="max-w-[600px] text-center">
-        <h1 className="mb-12 text-5xl md:text-6xl font-semibold leading-tight">
+        <h1 className="mb-12 text-5xl md:text-6xl font-semibold leading-tight font-albert-sans">
           <span className="italic">{highlightedText}</span> {title}
         </h1>
         <p dangerouslySetInnerHTML={{ __html: description }} />
       </div>
-    </div>
+    </section>
   );
 };
 

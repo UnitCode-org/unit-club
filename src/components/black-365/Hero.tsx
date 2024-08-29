@@ -5,7 +5,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ logo, page }) => {
   return (
-    <div className="flex justify-center items-center min-h-screen max-w-screen-2xl">
+    <section className="flex justify-center items-center min-h-screen max-w-screen-2xl font-albert-sans">
       <div className="flex flex-col md:flex-row items-center lg:ml-8 xl:ml-16 text-7xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold font-albertSans">
         <h1 className="mb-36 lg:mb-44 hidden md:block">UNIT</h1>
         <video autoPlay loop muted playsInline className="w-96 lg:w-128 h-auto">
@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ logo, page }) => {
           {page.toUpperCase()}
         </h1>
       </div>
-    </div>
+    </section>
   );
 };
 
