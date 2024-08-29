@@ -45,7 +45,7 @@ function IntroKeyhole({ onClick }: IntroKeyholeProps) {
       onClick={onClick}
     >
       <CustomCursor opacityDelay={1} opacityDuration={0.5}>
-        <div className="fixed -top-8 -left-14">
+        <div className="fixed -top-12 -left-14">
           <p className="font-medium text-unit-gray-20 text-nowrap">
             CLICK TO ENTER
           </p>

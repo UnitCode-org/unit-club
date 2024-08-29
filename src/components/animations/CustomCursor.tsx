@@ -5,9 +5,10 @@ interface IntroCursorProps {
   children: React.ReactNode;
   opacityDelay: number;
   opacityDuration: number;
+  animate?: { [key: string]: any };
 }
 
-function CustomCursor({ children, opacityDelay, opacityDuration }: IntroCursorProps) {
+function CustomCursor({ children, opacityDelay, opacityDuration, animate }: IntroCursorProps) {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const updatePosition = (e: MouseEvent) => {
@@ -30,7 +31,8 @@ function CustomCursor({ children, opacityDelay, opacityDuration }: IntroCursorPr
         animate={{
           x: position.x,
           y: position.y,
-          opacity: 1
+          opacity: 1,
+          ...animate
         }}
         transition={{
           opacity: { duration: opacityDuration, delay: opacityDelay }

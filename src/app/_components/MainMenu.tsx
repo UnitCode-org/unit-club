@@ -1,22 +1,52 @@
+"use client";
+
 import CustomCursor from "@/components/animations/CustomCursor";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 function MainMenu() {
+  const [cursorText, setCursorText] = useState("");
+  const variants = {
+    default: {},
+    project: {
+      backgroundColor: "#D9D9D9",
+      color: "#000",
+      fontSize: "16px",
+      padding: "0.75rem 2.5rem",
+      fontWeight: "500",
+      borderRadius: "0.5rem",
+    },
+  };
+  const [cursorVariant, setCursorVariant] = useState(variants.default);
+
   return (
     <>
-      <CustomCursor opacityDelay={1} opacityDuration={0.5}>
-        <div className="fixed -top-8 -left-14">
-          <p className="font-medium text-unit-gray-20 text-nowrap">
-            CLICK TO ENTER
-          </p>
-          <div className="bg-unit-gray-50 rounded-full p-1.5 h-fit w-fit opacity-50 mx-auto mt-3.5">
-            <div className="bg-unit-gray-20 rounded-full p-2.5 h-fit w-fit"></div>
+      <CustomCursor
+        opacityDelay={1}
+        opacityDuration={0.5}
+        animate={cursorVariant}
+      >
+        <>
+          <div className="fixed -top-8 -left-4">
+            <div className="bg-unit-gray-50 rounded-full p-1.5 h-fit w-fit opacity-50 mx-auto mt-3.5">
+              <div className="bg-unit-gray-20 rounded-full p-2.5 h-fit w-fit"></div>
+            </div>
           </div>
-        </div>
+          <div>{cursorText}</div>
+        </>
       </CustomCursor>
       <div className="flex w-full justify-center items-end gap-8">
-        <div className="bg-black flex flex-col items-center rounded-t-full w-1/3 h-full relative overflow-hidden max-w-md group">
+        <div
+          className="bg-black flex flex-col items-center rounded-t-full w-1/3 h-full relative overflow-hidden max-w-md group"
+          onMouseEnter={() => {
+            setCursorVariant(variants.project);
+            setCursorText("ENTER");
+          }}
+          onMouseLeave={() => {
+            setCursorVariant(variants.default);
+            setCursorText("");
+          }}
+        >
           <div className="absolute bg-gray-600 z-10 w-full h-full opacity-25 group-hover:bg-gray-700 transition-all"></div>
           <div className="absolute h-[60rem] w-[60rem] z-0 -left-80 brightness-75 contrast-150 group-hover:brightness-50 transition-all">
             <video
@@ -48,7 +78,17 @@ function MainMenu() {
             </p>
           </div>
         </div>
-        <div className="bg-black flex flex-col items-center rounded-t-full w-1/3 h-full relative overflow-hidden max-w-md group">
+        <div
+          className="bg-black flex flex-col items-center rounded-t-full w-1/3 h-full relative overflow-hidden max-w-md group"
+          onMouseEnter={() => {
+            setCursorVariant(variants.project);
+            setCursorText("ENTER");
+          }}
+          onMouseLeave={() => {
+            setCursorVariant(variants.default);
+            setCursorText("");
+          }}
+        >
           <div className="absolute bg-gray-600 z-10 w-full h-full opacity-25 group-hover:bg-gray-700 transition-all"></div>
           <div className="absolute h-[60rem] w-[60rem] z-0 -left-20 brightness-75 contrast-150 group-hover:brightness-50 transition-all">
             <video
