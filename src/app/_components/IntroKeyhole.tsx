@@ -5,7 +5,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-function IntroKeyhole() {
+interface IntroKeyholeProps {
+  onClick?: () => void;
+}
+
+function IntroKeyhole({ onClick }: IntroKeyholeProps) {
   const [selectedImage, setSelectedImage] = useState(0);
 
   const images = [
@@ -34,7 +38,12 @@ function IntroKeyhole() {
   }, [images.length]);
 
   return (
-    <div className="bg-black fixed w-screen h-screen flex justify-center items-center">
+    <motion.div
+      className="bg-black fixed w-screen h-screen flex justify-center items-center"
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClick}
+    >
       <CustomCursor opacityDelay={1} opacityDuration={0.5}>
         <div className="fixed -top-8 -left-14">
           <p className="font-medium text-unit-gray-20 text-nowrap">
@@ -79,7 +88,7 @@ function IntroKeyhole() {
           CLICK TO ENTER
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

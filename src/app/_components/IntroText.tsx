@@ -21,7 +21,7 @@ function IntroText() {
 	}, []);
 
 	return (
-		<div className="text-center flex flex-col gap-8">
+		<div className="text-center flex flex-col flex-grow justify-center mb-20 gap-8">
 			<AnimatePresence>
 				{firstIntro && (
 					<>
