@@ -77,3 +77,10 @@
 .font-albert-sans {
   font-family: var(--font-albert-sans);
 }
+
+.keyhole-mask {
+-webkit-mask-image: url("/images/masks/keyhole.svg");
+  mask-image: url("/images/masks/keyhole.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+}

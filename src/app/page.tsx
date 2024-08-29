@@ -1,13 +1,15 @@
-import IntroText from "@/app/_components/IntroText";
+"use client";
+
 import Footer from "@/app/_components/Footer";
 import Navbar from "@/app/_components/Navbar";
-import Image from "next/image";
+import IntroKeyhole from "./_components/IntroKeyhole";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between cursor-none">
-      <Navbar />
-      <IntroText />
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Navbar hideLinks />
+      <IntroKeyhole />
+      {/* <IntroText /> */}
       <Footer />
     </main>
   );
