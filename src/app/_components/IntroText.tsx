@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import FadeIn from "@/components/animations/FadeIn";
 import CustomCursor from "@/components/animations/CustomCursor";
 
-function Hero() {
+function IntroText() {
 	const [firstIntro, setFirstIntro] = useState(true);
 	const [secondIntro, setSecondIntro] = useState(false);
 
@@ -61,4 +61,4 @@ function Hero() {
 	);
 }
 
-export default Hero;
+export default IntroText;
