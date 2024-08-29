@@ -24,7 +24,7 @@ function CustomCursor({ children, opacityDelay, opacityDuration, animate }: Intr
   }, []);
 
   return (
-   position.x != 0 && position.y != 0 && (
+   (position.x != 0 || position.y != 0) && (
       <motion.div
         className="hidden md:block fixed top-0 left-0 pointer-events-none z-50"
         initial={{ opacity: 0 }}
