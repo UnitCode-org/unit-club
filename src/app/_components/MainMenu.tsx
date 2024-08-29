@@ -4,6 +4,7 @@ import CustomCursor from "@/components/animations/CustomCursor";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+import Footer from "./Footer";
 
 function MainMenu() {
   const [cursorText, setCursorText] = useState("");
@@ -37,9 +38,9 @@ function MainMenu() {
           <div className="font-medium">{cursorText}</div>
         </>
       </CustomCursor>
-      <div className="flex w-full justify-center items-end gap-8">
+      <div className="flex w-screen h-screen justify-center items-end gap-8 -mt-[5.75rem]">
         <div
-          className="bg-black flex flex-col items-center rounded-t-full w-1/3 h-full relative overflow-hidden max-w-md group"
+          className="bg-black flex flex-col items-center justify-end rounded-t-full w-1/3 h-2/3 relative overflow-hidden max-w-md group"
           onMouseEnter={() => {
             setCursorVariant(variants.project);
             setCursorText("ENTER");
@@ -68,7 +69,7 @@ function MainMenu() {
           <div
             className={
               "z-10 flex flex-col items-center text-white text-center transition-all duration-1000" +
-              (unitBlackHovered ? " py-60" : " pt-[30rem] pb-[0rem]")
+              (unitBlackHovered ? " pb-52" : " pb-[0rem] -mb-4")
             }
           >
             <Image
@@ -89,7 +90,7 @@ function MainMenu() {
         </div>
         <Link
           href={"/365"}
-          className="bg-black flex flex-col items-center rounded-t-full w-1/3 h-full relative overflow-hidden max-w-md group"
+          className="bg-black flex flex-col items-center justify-end rounded-t-full w-1/3 h-2/3 relative overflow-hidden max-w-md group"
           onMouseEnter={() => {
             setCursorVariant(variants.project);
             setCursorText("ENTER");
@@ -118,7 +119,7 @@ function MainMenu() {
           <div
             className={
               "z-10 flex flex-col items-center text-white text-center transition-all duration-1000" +
-              (unit365Hovered ? " py-60" : " pt-[30rem] pb-[0rem]")
+              (unit365Hovered ? " pb-52" : " pb-[0rem] -mb-4")
             }
           >
             <Image
@@ -138,6 +139,7 @@ function MainMenu() {
           </div>
         </Link>
       </div>
+      <Footer />
     </>
   );
 }
