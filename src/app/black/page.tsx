@@ -9,7 +9,7 @@ function UnitBlackPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between bg-black">
       <Navbar />
-      <Hero logo="/videos/logo/Black.mp4" page="Black" />
+      <Hero logo="/images/logo/Black.mp4" page="Black" />
       <ScrollToDiscover />
       <Description
         title="OF EXCLUSIVITY."
