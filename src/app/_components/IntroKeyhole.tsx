@@ -44,16 +44,6 @@ function IntroKeyhole({ onClick }: IntroKeyholeProps) {
       exit={{ opacity: 0 }}
       onClick={onClick}
     >
-      <CustomCursor opacityDelay={1} opacityDuration={0.5}>
-        <div className="fixed -top-12 -left-14">
-          <p className="font-medium text-unit-gray-20 text-nowrap">
-            CLICK TO ENTER
-          </p>
-          <div className="bg-unit-gray-50 rounded-full p-1.5 h-fit w-fit opacity-50 mx-auto mt-3.5">
-            <div className="bg-unit-gray-20 rounded-full p-2.5 h-fit w-fit"></div>
-          </div>
-        </div>
-      </CustomCursor>
       <div className="w-80 h-80 relative">
         <div className="keyhole-mask w-full h-full">
           <motion.div className="w-full h-full absolute">
