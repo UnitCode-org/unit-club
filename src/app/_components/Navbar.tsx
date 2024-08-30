@@ -100,7 +100,12 @@ function Navbar({ hideLinks }: NavbarProps) {
         )}
       </div>
       {/* Desktop Navbar */}
-      <div className={"hidden md:flex flex-row gap-4 items-center justify-between w-full max-w-screen-2xl py-8 px-10 top-0" + (!isFixed ? " sticky z-10" : " fixed left-0 z-50")}>
+      <div
+        className={
+          "hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10 top-0" +
+          (!isFixed ? " sticky z-10" : " max-w-screen-2xl fixed left-0 z-50")
+        }
+      >
         {!hideLinks && (
           <div className="grow basis-0 flex items-center gap-10">
             <Link
