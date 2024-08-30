@@ -102,7 +102,7 @@ function Navbar({ hideLinks }: NavbarProps) {
       {/* Desktop Navbar */}
       <div
         className={
-          "hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10 top-0" +
+          "hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10 top-0 bg-black" +
           (!isFixed ? " sticky z-10" : " max-w-screen-2xl fixed left-0 z-50")
         }
       >
