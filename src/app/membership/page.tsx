@@ -1,6 +1,8 @@
 import React from "react";
 import MembershipHero from "./_components/MembershipHero";
 import Navbar from "../_components/Navbar";
+import MembershipConfirmation from "./_components/MembershipConfirmation";
+import MembershipForm from "./_components/MembershipForm";
 
 function MembershipPage() {
   return (
@@ -10,7 +12,9 @@ function MembershipPage() {
       }
     >
       <Navbar />
-      <MembershipHero />
+      {/* <MembershipHero /> */}
+      {/* <MembershipConfirmation /> */}
+      <MembershipForm />
     </main>
   );
 }

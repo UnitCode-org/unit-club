@@ -7,15 +7,17 @@ interface TextFadeInBottomProps {
   children: React.ReactNode;
   y?: number;
   delay?: number;
+  className?: string;
 }
 
 export const FadeInBottom = ({
   children,
   y,
   delay,
+  className
 }: TextFadeInBottomProps) => {
   return (
-    <div className="h-fit w-fit overflow-clip">
+    <div className={"h-fit overflow-clip" + (className ? " " + className : " w-fit")}>
       <motion.div
         initial="hidden"
         animate="visible"
