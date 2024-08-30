@@ -7,6 +7,7 @@ const config = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
+    "./node_modules/flowbite/**/*.js",
   ],
   prefix: "",
   theme: {
@@ -60,7 +61,7 @@ const config = {
           30: "#CDCDCD",
           40: "#ACACAC",
           50: "#939393",
-          60: "#606060"
+          60: "#606060",
         },
       },
       borderRadius: {
@@ -84,7 +85,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("flowbite/plugin")],
 } satisfies Config;
 
 export default config;
