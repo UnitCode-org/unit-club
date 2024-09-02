@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        xs: "350px",
+      },
       width: {
         128: "32rem",
       },
@@ -60,6 +63,7 @@ const config = {
           30: "#CDCDCD",
           40: "#ACACAC",
           50: "#939393",
+          60: "#0F0F0F",
         },
       },
       borderRadius: {

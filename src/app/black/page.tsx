@@ -4,6 +4,9 @@ import Hero from "@/components/black-365/Hero";
 import ScrollToDiscover from "@/components/black-365/ScrollToDiscover";
 import Description from "@/components/black-365/Description";
 import PhotoGallery from "@/components/black-365/PhotoGallery";
+import Promotion from "@/components/black-365/Promotion";
+import Membership from "@/components/black-365/Membership";
+import WantToJoin from "@/components/black-365/WantToJoin";
 
 function UnitBlackPage() {
   return (
@@ -14,13 +17,21 @@ function UnitBlackPage() {
       <Description
         title="OF EXCLUSIVITY."
         highlightedText="PINNACLE"
-        description={`From global summits to private galas, UC Black members are always at
-      the heart of the action.<br /><br />Network and connect with the world's most influential individuals in intimate, invitation-only settings.`}
+        description={`From global summits to private galas, UC Black members are always at the heart of the action.<br/><br/>Network and connect with the world's most influential individuals in intimate, invitation-only settings.`}
       />
       <PhotoGallery
         title="THE ULTIMATE ELITE CIRCLE"
-        description="UC Black is more than a club; it's a community of 150 of the world's most influential leaders and innovators. Membership is exclusively by invitation, ensuring that only the most distinguished individuals are part of this unparalleled circle."
+        description="UC Black is more than a club; it's a community of 150 of the world's most influential leaders\nand innovators. Membership is exclusively by invitation, ensuring that only the most\ndistinguished individuals are part of this unparalleled circle."
       />
+      <Promotion
+        number="150"
+        title="GLOBALLY RECOGNIZED<br/>MEMBERS, INVITATION ONLY"
+        description={`Unlock Unparalleled Access To The World's Most<br />Prestigious Events, Private Gatherings, and a Network of Elite Peers.`}
+      />
+      <Membership
+        description={`To be part of UC Black, A minimum holding of $1,000 worth of UNIT tokens via the Unit App.<br/><br/>This ensures you're fully integrated into the ecosystem and ready to unlock the unparalleled benefits that come with membership in UC Black. Once this requirement is met, you'll be on your way to joining the elite circle.`}
+      />
+      <WantToJoin description="Seeking extraordinary experiences and connections? If you're driven to succeed and want to be part of something truly exclusive, then UC Black is your next step. Let's do this together." />
       <Footer />
     </main>
   );
