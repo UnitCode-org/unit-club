@@ -12,7 +12,7 @@ function Input({ label, name, className }: InputProps) {
       <input
         type="text"
         id={name}
-        className="block px-6 pb-2.5 pt-4 h-16 w-full text-white bg-transparent rounded-full border-1 border-unit-gray-70 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
+        className="block px-6 pb-2.5 pt-4 h-16 mt-3 w-full text-white bg-transparent rounded-full border-1 border-unit-gray-70 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
         placeholder=" "
         name={name}
       />
