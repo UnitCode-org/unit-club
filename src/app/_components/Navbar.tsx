@@ -113,7 +113,7 @@ function Navbar({ hideLinks }: NavbarProps) {
         {...fadeInFromTop}
         className={
           "flex justify-center items-center w-full" +
-          (isFixed && "fixed top-0 left-0 z-50 backdrop-blur-md")
+          (isFixed && " fixed top-0 left-0 z-50 backdrop-blur-md")
         }
       >
         <div className="hidden md:flex flex-row gap-4 items-center justify-between w-full max-w-screen-2xl py-8 px-10 z-10">

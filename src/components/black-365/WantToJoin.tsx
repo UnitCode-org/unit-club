@@ -20,7 +20,7 @@ const WantToJoin: React.FC<WantToJoinProps> = ({ description }) => {
   return (
     <section className="flex flex-col justify-center items-center w-full max-w-screen-2xl mb-32 px-4 md:px-12">
       <motion.div
-        className="w-full rounded-xl md:rounded-2xl border border-gray-500 bg-unit-gray-60 overflow-hidden cursor-pointer relative"
+        className="w-full rounded-xl md:rounded-2xl border border-gray-500 bg-[#0f0f0f] overflow-hidden cursor-pointer relative"
         initial={{ height: initialHeight }}
         animate={{ height: isHovered ? "auto" : initialHeight }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
