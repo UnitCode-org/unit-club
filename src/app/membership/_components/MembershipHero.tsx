@@ -2,11 +2,24 @@ import { FadeInBottom } from "@/components/animations/FadeInBottom";
 import { TextFadeInBottom } from "@/components/animations/TextFadeInBottom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import React from "react";
+import { motion } from "framer-motion";
+import React, { Dispatch, SetStateAction } from "react";
 
-function MembershipHero() {
+interface MembershipHeroProps {
+  handleHeroButtonClick: () => void;
+  setApplyFor: Dispatch<SetStateAction<string>>;
+}
+
+function MembershipHero({
+  handleHeroButtonClick,
+  setApplyFor
+}: MembershipHeroProps) {
   return (
-    <>
+    <motion.div
+      className="w-full h-full flex flex-col items-center justify-center"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className="w-full mt-4 max-h-64 overflow-clip">
         <video
           width="2856"
@@ -43,17 +56,31 @@ function MembershipHero() {
       </div>
       <div className="flex gap-8">
         <FadeInBottom>
-          <Button className="px-7 py-6 text-md" variant="default">
+          <Button
+            className="px-7 py-6 text-md"
+            variant="default"
+            onClick={() => {
+              handleHeroButtonClick();
+              setApplyFor("black");
+            }}
+          >
             APPLY FOR UC BLACK
           </Button>
         </FadeInBottom>
         <FadeInBottom delay={0.2}>
-          <Button className="px-7 py-6 text-md" variant="default">
+          <Button
+            className="px-7 py-6 text-md"
+            variant="default"
+            onClick={() => {
+              handleHeroButtonClick();
+              setApplyFor("365");
+            }}
+          >
             APPLY FOR UC 365
           </Button>
         </FadeInBottom>
       </div>
-    </>
+    </motion.div>
   );
 }
 

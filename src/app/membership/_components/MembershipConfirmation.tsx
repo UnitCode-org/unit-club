@@ -1,12 +1,23 @@
+"use client";
+
 import { FadeInBottom } from "@/components/animations/FadeInBottom";
 import { TextFadeInBottom } from "@/components/animations/TextFadeInBottom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@radix-ui/react-separator";
+import { motion } from "framer-motion";
 import React from 'react';
 
-function MembershipConfirmation() {
+interface MembershipConfirmationProps {
+  handleConfirmationButtonClick: () => void;
+}
+
+function MembershipConfirmation({ handleConfirmationButtonClick }: MembershipConfirmationProps) {
   return (
-    <div className="w-full h-full flex-grow flex flex-col items-center justify-center pb-20">
+    <motion.div
+      className="w-full h-full flex-grow flex flex-col items-center justify-center pb-20"
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       <div className="text-center max-w-3xl">
         <h1 className="text-6xl font-albert-sans font-bold">
           <TextFadeInBottom
@@ -21,12 +32,16 @@ function MembershipConfirmation() {
       </div>
       <div className="mt-10">
         <FadeInBottom>
-          <Button className="px-7 py-6 text-md" variant="default">
+          <Button
+            className="px-7 py-6 text-md"
+            variant="default"
+            onClick={handleConfirmationButtonClick}
+          >
             START APPLICATION
           </Button>
         </FadeInBottom>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
