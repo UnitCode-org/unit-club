@@ -11,9 +11,9 @@ interface MembershipFormProps {
 
 function MembershipForm({ applyFor }: MembershipFormProps) {
   return (
-    <div className="w-full h-full flex-grow flex flex-col items-center justify-center pb-32 pt-32">
-      <div className="text-center">
-        <h1 className="text-6xl font-albert-sans font-bold">
+    <div className="w-full h-full flex-grow flex flex-col items-center justify-center md:py-32 py-16">
+      <div className="text-center px-10 md:px-6">
+        <h1 className="text-5xl md:text-6xl font-albert-sans font-bold leading-[3.5rem]">
           <TextFadeInBottom
             y={100}
             staggerChildren={0.1}
@@ -21,8 +21,8 @@ function MembershipForm({ applyFor }: MembershipFormProps) {
           />
         </h1>
       </div>
-      <form className="w-full max-w-4xl flex flex-col items-center">
-        <FadeInBottom className="w-full mt-20 mb-14" y={80}>
+      <form className="w-full max-w-4xl flex flex-col items-center px-5 md:px-6">
+        <FadeInBottom className="w-full md:mt-20 mt-7 mb-14" y={80}>
           <Input label="Referred by" name="refferredBy" />
         </FadeInBottom>
         <div className="flex flex-col gap-3 w-full">
@@ -64,7 +64,7 @@ function MembershipForm({ applyFor }: MembershipFormProps) {
         </div>
         <div className="mt-12">
           <FadeInBottom delay={0.9}>
-            <Button className="px-7 py-6 text-md" variant="default">
+            <Button className="px-7 py-6 text-md w-56" variant="default">
               SUBMIT APPLICATION
             </Button>
           </FadeInBottom>

@@ -18,8 +18,8 @@ function MembershipConfirmation({ handleConfirmationButtonClick }: MembershipCon
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="text-center max-w-3xl">
-        <h1 className="text-6xl font-albert-sans font-bold">
+      <div className="text-center max-w-3xl px-10 md:px-6">
+        <h1 className="text-5xl md:text-6xl font-albert-sans font-bold leading-[3.5rem]">
           <TextFadeInBottom
             y={100}
             staggerChildren={0.1}
@@ -33,7 +33,7 @@ function MembershipConfirmation({ handleConfirmationButtonClick }: MembershipCon
       <div className="mt-10">
         <FadeInBottom>
           <Button
-            className="px-7 py-6 text-md"
+            className="px-7 py-6 text-md w-56"
             variant="default"
             onClick={handleConfirmationButtonClick}
           >
