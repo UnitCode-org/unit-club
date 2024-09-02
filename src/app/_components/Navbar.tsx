@@ -25,7 +25,7 @@ function Navbar({ hideLinks }: NavbarProps) {
         className={
           "flex md:hidden flex-row gap-4 items-center w-full p-6 z-10" +
           (!hideLinks ? " justify-between" : " justify-center") +
-          (isFixed && " fixed top-0 left-0 w-full z-50")
+          (isFixed ? " fixed top-0 left-0 w-full z-50" : "")
         }
       >
         <div className="opacity-75">
