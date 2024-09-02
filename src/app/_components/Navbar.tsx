@@ -5,14 +5,18 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 interface NavbarProps {
   hideLinks?: boolean;
 }
 
 function Navbar({ hideLinks }: NavbarProps) {
-  const [openMobileSheet, setOpenMobileSheet] = React.useState(false);
+  const [openMobileSheet, setOpenMobileSheet] = useState(false);
+  const pathname = usePathname();
+
+  const isFixed = pathname === "/black" || pathname === "/365";
 
   return (
     <>
@@ -20,7 +24,8 @@ function Navbar({ hideLinks }: NavbarProps) {
       <div
         className={
           "flex md:hidden flex-row gap-4 items-center w-full p-6 z-10" +
-          (!hideLinks ? " justify-between" : " justify-center")
+          (!hideLinks ? " justify-between" : " justify-center") +
+          (isFixed && " fixed top-0 left-0 w-full z-50")
         }
       >
         <div className="opacity-75">
@@ -95,7 +100,12 @@ function Navbar({ hideLinks }: NavbarProps) {
         )}
       </div>
       {/* Desktop Navbar */}
-      <div className="hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10 z-10 sticky top-0">
+      <div
+        className={
+          "hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10 top-0 bg-black" +
+          (!isFixed ? " sticky z-10" : " max-w-screen-2xl fixed left-0 z-50")
+        }
+      >
         {!hideLinks && (
           <div className="grow basis-0 flex items-center gap-10">
             <Link
