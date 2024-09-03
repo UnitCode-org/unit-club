@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main
       className={
-        "flex min-h-screen flex-col items-center justify-between cursor-none"
+        "flex min-h-screen flex-col items-center justify-between"
       }
     >
       <Navbar hideLinks />
@@ -29,9 +29,6 @@ export default function Home() {
                 <p className="font-medium text-unit-gray-20 text-nowrap">
                   CLICK TO ENTER
                 </p>
-                <div className="bg-unit-gray-50 rounded-full p-1.5 h-fit w-fit opacity-50 mx-auto mt-3.5">
-                  <div className="bg-unit-gray-20 rounded-full p-2.5 h-fit w-fit"></div>
-                </div>
               </div>
             </CustomCursor>
             <IntroKeyhole

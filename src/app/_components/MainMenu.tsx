@@ -36,18 +36,13 @@ function MainMenu() {
         animate={cursorVariant}
       >
         <>
-          <div className="fixed -top-8 -left-4">
-            <div className="bg-unit-gray-50 rounded-full p-1.5 h-fit w-fit opacity-50 mx-auto mt-3.5">
-              <div className="bg-unit-gray-20 rounded-full p-2.5 h-fit w-fit"></div>
-            </div>
-          </div>
           <div className="font-medium">{cursorText}</div>
         </>
       </CustomCursor>
       <div className="flex flex-col md:flex-row w-screen h-screen justify-center items-center md:items-end gap-8 md:-mt-[5.75rem] -mt-[4.75rem] pt-20 pb-8 px-7 md:p-0">
         <Link
           href={"/black"}
-          className="bg-black flex flex-col items-center justify-end rounded-t-full w-full md:w-1/3 h-2/3 relative overflow-hidden max-w-md group cursor-none"
+          className="bg-black flex flex-col items-center justify-end rounded-t-full w-full md:w-1/3 h-2/3 relative overflow-hidden max-w-md group"
           onMouseEnter={() => {
             setCursorVariant(variants.project);
             setCursorText("ENTER");
@@ -107,7 +102,7 @@ function MainMenu() {
         </Link>
         <Link
           href={"/365"}
-          className="bg-black flex flex-col items-center justify-end rounded-t-full w-full md:w-1/3 h-2/3 relative overflow-hidden max-w-md group cursor-none"
+          className="bg-black flex flex-col items-center justify-end rounded-t-full w-full md:w-1/3 h-2/3 relative overflow-hidden max-w-md group"
           onMouseEnter={() => {
             setCursorVariant(variants.project);
             setCursorText("ENTER");
