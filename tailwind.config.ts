@@ -19,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        xs: "350px",
+      },
       width: {
         128: "32rem",
       },

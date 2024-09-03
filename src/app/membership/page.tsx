@@ -15,13 +15,12 @@ function MembershipPage() {
   const [applyFor, setApplyFor] = useState("black");
 
   function handleHeroButtonClick() {
-        setShowMembershipHero(false);
-        setTimeout(() => {
-          setShowMembershipConfirmation(true);
-        }, 1500);
+    setShowMembershipHero(false);
+    setTimeout(() => {
+      setShowMembershipConfirmation(true);
+    }, 1500);
   }
 
-  
   function handleConfirmationButtonClick() {
     setShowMembershipConfirmation(false);
     setTimeout(() => {
@@ -40,7 +39,9 @@ function MembershipPage() {
           />
         )}
         {showMembershipConfirmation && (
-          <MembershipConfirmation handleConfirmationButtonClick={handleConfirmationButtonClick} />
+          <MembershipConfirmation
+            handleConfirmationButtonClick={handleConfirmationButtonClick}
+          />
         )}
         {showMembershipForm && <MembershipForm applyFor={applyFor} />}
       </AnimatePresence>

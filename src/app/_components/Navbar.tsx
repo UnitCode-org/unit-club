@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface NavbarProps {
   hideLinks?: boolean;
@@ -16,16 +17,23 @@ function Navbar({ hideLinks }: NavbarProps) {
   const [openMobileSheet, setOpenMobileSheet] = useState(false);
   const pathname = usePathname();
 
-  const isFixed = pathname === "/black" || pathname === "/365";
+  const isFixed = pathname !== "/";
+
+  const fadeInFromTop = {
+    initial: { opacity: 0, y: -50 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 1 },
+  };
 
   return (
     <>
       {/* Mobile Navbar */}
-      <div
+      <motion.div
+        {...fadeInFromTop}
         className={
           "flex md:hidden flex-row gap-4 items-center w-full p-6 z-10" +
           (!hideLinks ? " justify-between" : " justify-center") +
-          (isFixed ? " fixed top-0 left-0 w-full z-50" : "")
+          (isFixed && " fixed top-0 left-0 w-full z-50 backdrop-blur-md")
         }
       >
         <div className="opacity-75">
@@ -89,7 +97,7 @@ function Navbar({ hideLinks }: NavbarProps) {
                   UNIT 365
                 </Link>
                 <Link
-                  href="/365"
+                  href="/membership"
                   className="font-albert-sans font-semibold text-white text-4xl"
                 >
                   MEMBERSHIP
@@ -98,55 +106,59 @@ function Navbar({ hideLinks }: NavbarProps) {
             </SheetContent>
           </Sheet>
         )}
-      </div>
+      </motion.div>
+
       {/* Desktop Navbar */}
-      <div
+      <motion.div
+        {...fadeInFromTop}
         className={
-          "hidden md:flex flex-row gap-4 items-center justify-between w-full py-8 px-10 top-0 bg-black" +
-          (!isFixed ? " sticky z-10" : " max-w-screen-2xl fixed left-0 z-50")
+          "flex justify-center items-center w-full" +
+          (isFixed && " fixed top-0 left-0 z-50 backdrop-blur-md")
         }
       >
-        {!hideLinks && (
-          <div className="grow basis-0 flex items-center gap-10">
-            <Link
-              href="/"
-              className="font-medium text-unit-gray-40 hover:text-white transition-colors"
-            >
-              HOME
-            </Link>
-            <Link
-              href="/black"
-              className="font-medium text-unit-gray-40 hover:text-white transition-colors"
-            >
-              UNIT BLACK
-            </Link>
-            <Link
-              href="/365"
-              className="font-medium text-unit-gray-40 hover:text-white transition-colors"
-            >
-              UNIT 365
-            </Link>
+        <div className="hidden md:flex flex-row gap-4 items-center justify-between w-full max-w-screen-2xl py-8 px-10 z-10">
+          {!hideLinks && (
+            <div className="grow basis-0 flex items-center gap-10">
+              <Link
+                href="/"
+                className="font-medium text-unit-gray-40 hover:text-white transition-colors"
+              >
+                HOME
+              </Link>
+              <Link
+                href="/black"
+                className="font-medium text-unit-gray-40 hover:text-white transition-colors"
+              >
+                UNIT BLACK
+              </Link>
+              <Link
+                href="/365"
+                className="font-medium text-unit-gray-40 hover:text-white transition-colors"
+              >
+                UNIT 365
+              </Link>
+            </div>
+          )}
+          <div className="opacity-75 mx-auto">
+            <Image
+              src="/images/logo/unit-club.svg"
+              width={28}
+              height={28}
+              alt="logo"
+            />
           </div>
-        )}
-        <div className="opacity-75 mx-auto">
-          <Image
-            src="/images/logo/unit-club.svg"
-            width={28}
-            height={28}
-            alt="logo"
-          />
+          {!hideLinks && (
+            <div className="flex gap-10 grow basis-0 items-center justify-end">
+              <Link
+                href="/membership"
+                className="font-medium text-unit-gray-40 hover:text-white transition-colors"
+              >
+                MEMBERSHIP
+              </Link>
+            </div>
+          )}
         </div>
-        {!hideLinks && (
-          <div className="flex gap-10 grow basis-0 items-center justify-end">
-            <Link
-              href="/membership"
-              className="font-medium text-unit-gray-40 hover:text-white transition-colors"
-            >
-              MEMBERSHIP
-            </Link>
-          </div>
-        )}
-      </div>
+      </motion.div>
     </>
   );
 }

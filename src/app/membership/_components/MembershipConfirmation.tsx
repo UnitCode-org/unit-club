@@ -5,16 +5,18 @@ import { TextFadeInBottom } from "@/components/animations/TextFadeInBottom";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@radix-ui/react-separator";
 import { motion } from "framer-motion";
-import React from 'react';
+import React from "react";
 
 interface MembershipConfirmationProps {
   handleConfirmationButtonClick: () => void;
 }
 
-function MembershipConfirmation({ handleConfirmationButtonClick }: MembershipConfirmationProps) {
+function MembershipConfirmation({
+  handleConfirmationButtonClick,
+}: MembershipConfirmationProps) {
   return (
     <motion.div
-      className="w-full h-full flex-grow flex flex-col items-center justify-center pb-20"
+      className="w-full h-full flex-grow flex flex-col items-center justify-center pb-20 mt-20"
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
