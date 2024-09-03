@@ -5,6 +5,7 @@ import { useState } from "react";
 import useMedia from "use-media";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface MembershipProps {
   description: string;
@@ -58,11 +59,15 @@ const Membership: React.FC<MembershipProps> = ({ description }) => {
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         />
-        <div className="flex justify-center mb-6 md:mb-16 relative z-50">
+        <Link
+          href="https://app.unit.network/"
+          target="_blank"
+          className="flex justify-center mb-6 md:mb-16 relative z-50"
+        >
           <Button size="lg" className="w-52">
             BUY UNIT
           </Button>
-        </div>
+        </Link>
       </motion.div>
     </section>
   );

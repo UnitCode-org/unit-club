@@ -29,7 +29,7 @@ function UnitBlackPage() {
         description={`Unlock Unparalleled Access To The World's Most<br />Prestigious Events, Private Gatherings, and a Network of Elite Peers.`}
       />
       <Membership
-        description={`To be part of UC Black, A minimum holding of $1,000 worth of UNIT tokens via the Unit App.<br/><br/>This ensures you're fully integrated into the ecosystem and ready to unlock the unparalleled benefits that come with membership in UC Black. Once this requirement is met, you'll be on your way to joining the elite circle.`}
+        description={`To be part of UC Black, you must receive an invitation or be referred by a current member, along with holding a minimum of $1,000 worth of UNIT tokens via the Unit App.`}
       />
       <WantToJoin description="Seeking extraordinary experiences and connections? If you're driven to succeed and want to be part of something truly exclusive, then UC Black is your next step. Let's do this together." />
       <Footer />
