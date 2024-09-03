@@ -16,7 +16,7 @@ function MembershipHero({
 }: MembershipHeroProps) {
   return (
     <motion.div
-      className="w-full h-full flex flex-col items-center justify-center mt-20"
+      className="w-full h-full flex flex-col items-center justify-center  mt-4 md:mt-20"
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >

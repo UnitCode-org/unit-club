@@ -5,6 +5,7 @@ import { useState } from "react";
 import useMedia from "use-media";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface WantToJoinProps {
   description: string;
@@ -54,11 +55,14 @@ const WantToJoin: React.FC<WantToJoinProps> = ({ description }) => {
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
         />
-        <div className="flex justify-center mb-6 md:mb-16 relative z-10">
+        <Link
+          href="/membership"
+          className="flex justify-center mb-6 md:mb-16 relative z-10"
+        >
           <Button size="lg" className="w-52">
             START APPLICATION
           </Button>
-        </div>
+        </Link>
       </motion.div>
     </section>
   );

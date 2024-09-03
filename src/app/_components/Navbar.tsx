@@ -36,7 +36,7 @@ function Navbar({ hideLinks }: NavbarProps) {
           (isFixed && " fixed top-0 left-0 w-full z-50 backdrop-blur-md")
         }
       >
-        <div className="opacity-75">
+        <div className={"opacity-75" + (hideLinks && " mx-auto")}>
           <Image
             src="/images/logo/unit-club.svg"
             width={28}
