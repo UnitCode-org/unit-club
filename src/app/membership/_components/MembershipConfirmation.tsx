@@ -16,7 +16,7 @@ function MembershipConfirmation({
 }: MembershipConfirmationProps) {
   return (
     <motion.div
-      className="w-full h-full flex-grow flex flex-col items-center justify-center pb-20  mt-4 md:mt-20"
+      className="w-full h-full flex-grow flex flex-col items-center justify-center pb-20 bg-black text-white mt-4 md:mt-20"
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >

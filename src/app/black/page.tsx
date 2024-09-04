@@ -21,7 +21,7 @@ function UnitBlackPage() {
       />
       <PhotoGallery
         title="THE ULTIMATE ELITE CIRCLE"
-        description="UC Black is more than a club; it's a community of 150 of the world's most influential leaders\nand innovators. Membership is exclusively by invitation, ensuring that only the most\ndistinguished individuals are part of this unparalleled circle."
+        description="UC Black is more than a club; it's a community of 150 of the world's most influential leaders and innovators. Membership is exclusively by invitation, ensuring that only the most distinguished individuals are part of this unparalleled circle."
       />
       <Promotion
         number="150"

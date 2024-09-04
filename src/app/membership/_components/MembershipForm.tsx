@@ -18,7 +18,7 @@ interface MembershipFormProps {
 
 function MembershipForm({ applyFor }: MembershipFormProps) {
   return (
-    <div className="w-full h-full flex-grow flex flex-col items-center justify-center md:py-32 py-16 mt-4 md:mt-20">
+    <div className="w-full h-full flex-grow flex flex-col items-center justify-center md:py-32 py-16 mt-4 md:mt-20 bg-black text-white">
       <div className="text-center px-10 md:px-6">
         <h1 className="text-5xl md:text-6xl font-albert-sans font-bold leading-[3.5rem]">
           <TextFadeInBottom
