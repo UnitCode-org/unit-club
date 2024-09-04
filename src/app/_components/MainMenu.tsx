@@ -22,7 +22,7 @@ function MainMenu() {
   const [cursorVariant, setCursorVariant] = useState(variants.default);
   const [unitBlackHovered, setUnitBlackHovered] = useState(false);
   const [unit365Hovered, setUnit365Hovered] = useState(false);
-  
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -153,10 +153,14 @@ function MainMenu() {
             <h1 className="font-albert-sans font-bold md:text-5xl text-3xl mt-3">
               UNIT 365
             </h1>
-            <p className="font-medium mt-4 opacity-0 group-hover:opacity-100 transition-all duration-1000 hidden md:block">
+            <p
+              className={`font-medium ${
+                unit365Hovered ? "mt-4" : "-mt-2"
+              } px-4 opacity-0 group-hover:opacity-100 transition-all duration-1000 hidden md:block`}
+            >
               {" "}
-              YOUR GATEWAY TO EXCLUSIVE
-              <br /> EXPERIENCES AND ELITE CONNECTIONS
+              CONNECT WITH EMERGING TALENTS AND UNLOCK EXCLUSIVE
+              OPPORTUNITIES—YOUR STEPPING STONE TO UC BLACK
             </p>
           </div>
         </Link>

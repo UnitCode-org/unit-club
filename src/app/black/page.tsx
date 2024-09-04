@@ -10,7 +10,7 @@ import WantToJoin from "@/components/black-365/WantToJoin";
 
 function UnitBlackPage() {
   return (
-    <main className="relative flex flex-col items-center justify-center min-h-screen w-screen bg-black overflow-y-clip overflow-x-hidden">
+    <main className="relative flex flex-col items-center justify-center min-h-screen w-screen bg-black text-white overflow-y-clip overflow-x-hidden">
       <Navbar />
       <Hero logo="/images/logo/Black.mp4" page="Black" />
       <ScrollToDiscover />

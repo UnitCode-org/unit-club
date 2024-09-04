@@ -29,7 +29,9 @@ function MembershipPage() {
   }
 
   return (
-    <main className={"flex min-h-screen flex-col items-center"}>
+    <main
+      className={"flex min-h-screen flex-col items-center bg-black text-white"}
+    >
       <Navbar />
       <AnimatePresence>
         {showMembershipHero && (

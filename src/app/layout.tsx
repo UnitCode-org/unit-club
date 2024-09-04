@@ -44,7 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${albertSans.variable}`}>
+    <html
+      lang="en"
+      className={`${dmSans.variable} ${albertSans.variable} bg-black text-white`}
+    >
       <body className="font-dm-sans">{children}</body>
     </html>
   );
