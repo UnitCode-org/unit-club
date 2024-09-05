@@ -1,17 +1,31 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import Navbar from "@/app/_components/Navbar";
 import IntroKeyhole from "./_components/IntroKeyhole";
-import { useState } from "react";
 import IntroText from "./_components/IntroText";
 import { AnimatePresence } from "framer-motion";
 import MainMenu from "./_components/MainMenu";
 import CustomCursor from "@/components/animations/CustomCursor";
 
 export default function Home() {
-  const [showKeyholeIntro, setShowKeyholeIntro] = useState(true);
+  const searchParams = useSearchParams();
+  const [showKeyholeIntro, setShowKeyholeIntro] = useState(false);
   const [showTextIntro, setShowTextIntro] = useState(false);
   const [showMainMenu, setShowMainMenu] = useState(false);
+
+  useEffect(() => {
+    if (searchParams.has("main-menu")) {
+      setShowMainMenu(true);
+      setShowKeyholeIntro(false);
+      setShowTextIntro(false);
+    } else {
+      setShowKeyholeIntro(true);
+      setShowTextIntro(false);
+      setShowMainMenu(false);
+    }
+  }, [searchParams]);
 
   return (
     <main
