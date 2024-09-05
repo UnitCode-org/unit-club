@@ -28,12 +28,12 @@ export default function Home() {
   }, [searchParams]);
 
   return (
-    <main
-      className={
-        "bg-black text-white flex min-h-screen flex-col items-center justify-between"
-      }
-    >
-      <Suspense fallback={<div></div>}>
+    <Suspense>
+      <main
+        className={
+          "bg-black text-white flex min-h-screen flex-col items-center justify-between"
+        }
+      >
         <Navbar hideLinks />
         <AnimatePresence>
           {showKeyholeIntro && (
@@ -64,7 +64,7 @@ export default function Home() {
           {showTextIntro && <IntroText />}
           {showMainMenu && <MainMenu />}
         </AnimatePresence>
-      </Suspense>
-    </main>
+      </main>
+    </Suspense>
   );
 }
