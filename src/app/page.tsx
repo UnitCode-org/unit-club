@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Navbar from "@/app/_components/Navbar";
 import IntroKeyhole from "./_components/IntroKeyhole";
@@ -28,43 +28,41 @@ export default function Home() {
   }, [searchParams]);
 
   return (
-    <Suspense>
-      <main
-        className={
-          "bg-black text-white flex min-h-screen flex-col items-center justify-between"
-        }
-      >
-        <Navbar hideLinks />
-        <AnimatePresence>
-          {showKeyholeIntro && (
-            <>
-              <CustomCursor opacityDelay={1} opacityDuration={0.5}>
-                <div className="fixed -top-12 -left-14">
-                  <p className="font-medium text-unit-gray-20 text-nowrap">
-                    CLICK TO ENTER
-                  </p>
-                </div>
-              </CustomCursor>
-              <IntroKeyhole
-                onClick={() => {
-                  setShowKeyholeIntro(false);
-                  setTimeout(() => {
-                    setShowTextIntro(true);
-                  }, 1000);
-                  setTimeout(() => {
-                    setShowTextIntro(false);
-                  }, 9000);
-                  setTimeout(() => {
-                    setShowMainMenu(true);
-                  }, 10000);
-                }}
-              />
-            </>
-          )}
-          {showTextIntro && <IntroText />}
-          {showMainMenu && <MainMenu />}
-        </AnimatePresence>
-      </main>
-    </Suspense>
+    <main
+      className={
+        "bg-black text-white flex min-h-screen flex-col items-center justify-between"
+      }
+    >
+      <Navbar hideLinks />
+      <AnimatePresence>
+        {showKeyholeIntro && (
+          <>
+            <CustomCursor opacityDelay={1} opacityDuration={0.5}>
+              <div className="fixed -top-12 -left-14">
+                <p className="font-medium text-unit-gray-20 text-nowrap">
+                  CLICK TO ENTER
+                </p>
+              </div>
+            </CustomCursor>
+            <IntroKeyhole
+              onClick={() => {
+                setShowKeyholeIntro(false);
+                setTimeout(() => {
+                  setShowTextIntro(true);
+                }, 1000);
+                setTimeout(() => {
+                  setShowTextIntro(false);
+                }, 9000);
+                setTimeout(() => {
+                  setShowMainMenu(true);
+                }, 10000);
+              }}
+            />
+          </>
+        )}
+        {showTextIntro && <IntroText />}
+        {showMainMenu && <MainMenu />}
+      </AnimatePresence>
+    </main>
   );
 }
