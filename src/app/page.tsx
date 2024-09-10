@@ -9,7 +9,7 @@ import IntroText from "./_components/IntroText";
 import MainMenu from "./_components/MainMenu";
 
 export default function Home() {
-  const [showKeyholeIntro, setShowKeyholeIntro] = useState(false);
+  const [showKeyholeIntro, setShowKeyholeIntro] = useState(true);
   const [showTextIntro, setShowTextIntro] = useState(false);
   const [showMainMenu, setShowMainMenu] = useState(false);
 
