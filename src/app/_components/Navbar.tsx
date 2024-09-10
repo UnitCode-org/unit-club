@@ -79,7 +79,7 @@ function Navbar({ hideLinks }: NavbarProps) {
               </div>
               <div className="flex flex-col gap-10 text-center flex-grow justify-center pb-8">
                 <Link
-                  href="/?main-menu"
+                  href="/main-menu"
                   className="font-albert-sans font-semibold text-white text-4xl"
                 >
                   HOME
@@ -120,7 +120,7 @@ function Navbar({ hideLinks }: NavbarProps) {
           {!hideLinks && (
             <div className="grow basis-0 flex items-center gap-10">
               <Link
-                href="/?main-menu"
+                href="/main-menu"
                 className="font-medium text-unit-gray-40 hover:text-white transition-colors"
               >
                 HOME
