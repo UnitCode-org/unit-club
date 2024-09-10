@@ -17,7 +17,7 @@ function Navbar({ hideLinks }: NavbarProps) {
   const [openMobileSheet, setOpenMobileSheet] = useState(false);
   const pathname = usePathname();
 
-  const isFixed = pathname !== "/";
+  const isFixed = pathname !== "/" && pathname !== "/main-menu";
 
   const fadeInFromTop = {
     initial: { opacity: 0, y: -50 },
